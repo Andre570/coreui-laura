@@ -84,13 +84,23 @@ const AddEdditDistrito = ({history, match})=> {
                     </div>
                     <div className="input-gruop">
                             
-                            <label>Presidente</label>
-                            <input className="form-control" {...register('presidente')} />
+                            <label>zona</label>
+                            <input className="form-control" {...register('zona')} />
                     </div>
                     <div className="input-gruop">
                             
-                            <label>País</label>
-                            <input className="form-control" {...register('pais')} />
+                            <label>asociacion_id</label>
+                            <input className="form-control" {...register('asociacion_id')} />
+                    </div>
+                    <div className="input-gruop">
+                            
+                            <label>pastor</label>
+                            <input className="form-control" {...register('pastor')} />
+                    </div>
+                    <div className="input-gruop">
+                            
+                            <label>tesorero</label>
+                            <input className="form-control" {...register('tesorero')} />
                     </div>
                     <button className="btn btn-primary" type="submit">Guardar</button>
                     <button className="btn btn-warning" type="button" onClick={() => onCancelar()}>Cancelar</button>
