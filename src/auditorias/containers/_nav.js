@@ -41,6 +41,12 @@ const _nav =  [
     icon: 'cil-pencil',
   },
   {
+    _tag: 'CSidebarNavItem',
+    name: 'Auditorias',
+    to: '/auditorias',
+    icon: 'cil-pencil',
+  },
+  {
     _tag: 'CSidebarNavDropdown',
     name: 'Pages',
     route: '/pages',
