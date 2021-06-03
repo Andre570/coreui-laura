@@ -20,12 +20,17 @@ const Auditorias = ({history}) => {
                 }
                 temporales.push(elem)
            })
+           console.log(temporales)
            setAuditorias(temporales)
         }
 
         traerDatos()
-
     }, [refFirestore])
+
+        const setActual = async (id)=>{
+            await refFirestore.collection('auditorias').doc(id).update({actual: true})
+            console.log('Actualizada actual')
+        }
 
     const eliminar = async (id) => {    
         const respuesta = window.confirm('¿Seguro que quiere eliminar?');
@@ -62,6 +67,22 @@ const Auditorias = ({history}) => {
                                 auditorias.map((auditoria, index) => (
                                     <tr key={auditoria.id}>
                                         <td>{index + 1}</td>
+                                        <td>{audit.fecha}</td>
+                                        <td></td>
+                                        <td>
+                                            {audit.actual
+                                             ?
+                                             'ACTUAL'
+                                             :
+                                            <button onClick={()=> setActual(audit.id) } className = "btn btn-primary byn-sm">
+                                                Poner como actual
+                                            </button>
+                                            }
+                                        </td>
+                                        <td>{audit.actual ? 'Si' : 'No' }</td>
+                                        <td>
+                                            <button className="btn btn-info btn-sm"></button>
+                                        </td>
                                             <td>{
                                             
                                                 auditoria.nombre

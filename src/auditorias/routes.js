@@ -10,6 +10,7 @@ const AddEditUnion = React.lazy(() => import('./uniones/AddEditUnion'));
 const Asociaciones = React.lazy(() => import('./asociaciones/AsociacionesTable'));
 const AddEditAsociacion = React.lazy(() => import('./asociaciones/AddEditAsociacion'));
 const Auditorias = React.lazy(() => import('./auditorias/Auditorias'));
+const AddEditAuditorias = React.lazy(() => import('./auditorias/AddEditAuditorias'));
 
 
 const routes = [
@@ -25,6 +26,7 @@ const routes = [
   { path: '/asociaciones', exact: true, name: 'Asociaciones', component: Asociaciones },
   { path: '/asociaciones/add', exact: true, name: 'Añadir Asociaciones', component: AddEditAsociacion },
   { path: '/auditorias', exact: true, name: 'Auditorias', component: Auditorias },
+  { path: '/auditorias/add', exact: true, name: 'Añadir Auditorias', component: AddEditAuditorias },
 
 ];
 

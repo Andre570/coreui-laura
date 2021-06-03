@@ -62,7 +62,7 @@ const schema = yup.object().shape({
 
     const crear = async  (datos) =>{
         console.log(datos)
-        await refFirestore.doc().set(datos)
+        await refFirestore.collection('auditorias').doc().set(datos)
         toast('Auditoria Creada con éxito')
         history.push('/auditorias')
     }
@@ -75,6 +75,10 @@ const schema = yup.object().shape({
     }
 
     const onCancelar = ()=> {
+        history.push('/auditorias')
+    }
+
+    const onGuardar= ()=> {
         history.push('/auditorias')
     }
 
@@ -116,7 +120,7 @@ const schema = yup.object().shape({
 
                      </div>
 
-                    <button className="btn btn-primary" type="submit">Guardar</button>
+                    <button className="btn btn-primary" type="button" onClick={()=> onGuardar()}>Guardar</button>
                     <button className="btn btn-warning" type="button" onClick={() => onCancelar()}>Cancelar</button>
                 </form>
             </div>
